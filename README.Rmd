@@ -19,37 +19,37 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-The goal of live.analytics is to ...
+live.analytics provides live-updating text analysis on your passages for ESL teaching. There are a bunch of different open-source wordlists out there, but making use of the research is not always all that easy. This project aims to consolidate the great work of a bunch of people and make it as accesible as possible to all audiences. 
+
+- Word-lists will be made available as part of an R-package, or as downloadable csvs
+- With some luck and inspiration, auto-generated text and auto-generated questions will be an option in the future
+- links to resources will be made available
+- a demo will be made availabe
+- shit be easy to use, yo
 
 ## Installation
 
-You can install the released version of live.analytics from [CRAN](https://CRAN.R-project.org) with:
+This is never making it to CRAN, so you can only get it from [GitHub](https://github.com/) with:
+
 
 ``` r
-install.packages("live.analytics")
+# install.packages("devtools")
+devtools::install_github("antdurrant/general.text.analytics")
 ```
 
-## Example
 
-This is a basic example which shows you how to solve a common problem:
+## Use of app
 
-```{r example}
-library(live.analytics)
-## basic example code
-```
+Realistically, nobody beyond me will ever work on this - the usable app is be available at:
+anthonypdurrant.shinyapps.io/general.text.analytics
+and documentation is available at: 
+netlify.someurlthathasnotbeenadefinedyet.com
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
-```
+## NOTE
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+- All of the everything is a work-in-progress
+- I am but a single person working on this in his spare-time, whilst working full-time and raising a family
+  - I think it is interesting and have found coworkers get value out of similar-ish in-house projects
+  - I have got enough out of the open-source community that I want to give back where I have some level of knowledge, and this is it
+  - Shout if you think of some way to improve, or if you want to help out in some wa
