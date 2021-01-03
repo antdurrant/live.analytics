@@ -19,6 +19,11 @@ usethis::use_package( "dplyr" )
 usethis::use_package( "udpipe" )
 usethis::use_package( "vroom" )
 usethis::use_package( "magrittr" )
+usethis::use_package( "stringr" )
+usethis::use_package( "tibble" )
+usethis::use_package( "glue" )
+usethis::use_package( "rlang")
+
 
 ## Add modules ----
 ## Create a module infrastructure in R/
@@ -28,6 +33,8 @@ golem::add_module( name = "metrics" ) # Name of the module
 ## Add helper functions ----
 ## Creates ftc_* and utils_*
 golem::add_fct( "analytics" ) 
+golem::add_fct( "list" ) 
+
 
 ## External resources
 ## Creates .js and .css files at inst/app/www
@@ -39,6 +46,8 @@ golem::add_fct( "analytics" )
 ## If you have data in your package
 usethis::use_data_raw( name = "lists", open = FALSE ) 
 usethis::use_data_raw( name = "texts", open = FALSE ) 
+usethis::use_data_raw(name  = "pos_ref", open = TRUE)
+
 ## Tests ----
 ## Add one line by test you want to create
 usethis::use_test( "app" )
