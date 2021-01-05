@@ -163,10 +163,13 @@
 
 
 
-#' wikipedia List
+#' flemma List
 #'
-#' A dataset containing the 5000 most frequent words according to wikipedia.
-#' Groups are just each thousand words.
+#' A dataset containing the 5000 most frequent flemmas 
+#' ("form-based-lemma" - lemmas that can have multiple meanings with the same form) 
+#' taken from Tom Cobb's lextutor site.
+#' Groups are separated by the hundred, and this list is specifically targeted at
+#' graded readers.
 #' 
 #' 
 #'
@@ -174,10 +177,10 @@
 #' \describe{
 #'   \item{lemma}{base form of the word, English}
 #'   \item{group}{"difficulty grouping"}
-#'   \item{on_list}{"wiki"}
+#'   \item{on_list}{"flemma"}
 #' }
-#' @source \url{https://www.newgeneralservicelist.org/bsl-business-service-list}
-"list_wiki"
+#' @source \url{https://www.lextutor.ca/vp/comp/bnc_info.html}
+"list_flemma"
 
 #' udpipe upos Part-of-Speech reference
 #'

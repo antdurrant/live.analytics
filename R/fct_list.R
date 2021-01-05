@@ -13,7 +13,9 @@ make_list <- function(piped, word_list = c(list_academic,
                                      list_ngsl,
                                      list_ngsl_all,
                                      list_wiki, 
-                                     list_toeic)){
+                                     list_toeic,
+                                     list_kids,
+                                     list_flemma)){
   
   
   piped %>% 

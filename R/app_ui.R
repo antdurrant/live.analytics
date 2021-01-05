@@ -5,38 +5,33 @@
 #' @import shiny
 #' @noRd
 app_ui <- function(request) {
-  tagList(
-    # Leave this function for adding external resources
-    golem_add_external_resources(),
     # List the first level UI elements here 
     fluidPage(
-      h1("live.analytics")
-    )
-  )
+      h1("live.analytics"),
+      textAreaInput(inputId = "text", 
+                    label = "Paste your text here for processing.", 
+                    width = "90%",
+                    height = "10%"
+                    ), # close textAreaInput
+      sidebarLayout(
+        sidebarPanel(width = 3,
+                     selectInput(inputId = "list_select",
+                     label = "Select your reference list:",
+                     choices = c("list_ngsl", 
+                                 "list_academic",
+                                 "list_business", 
+                                 "list_dolch", 
+                                 "list_flemma", 
+                                 "list_ngsl_all", 
+                                 "list_toeic",
+                                 "list_wiki"), # close c
+                     selected = "list_general_plus"), # close selectInput
+        ), # close sidebarPanel
+        mainPanel(dataTableOutput("table_word_list")
+      ) # close mainPanel
+    ) # close sidebarLayout
+  ) # close fluidPage
 }
 
-#' Add external Resources to the Application
-#' 
-#' This function is internally used to add external 
-#' resources inside the Shiny application. 
-#' 
-#' @import shiny
-#' @importFrom golem add_resource_path activate_js favicon bundle_resources
-#' @noRd
-golem_add_external_resources <- function(){
-  
-  add_resource_path(
-    'www', app_sys('app/www')
-  )
- 
-  tags$head(
-    favicon(),
-    bundle_resources(
-      path = app_sys('app/www'),
-      app_title = 'live.analytics'
-    )
-    # Add here other external resources
-    # for example, you can add shinyalert::useShinyalert() 
-  )
-}
+
 
