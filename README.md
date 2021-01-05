@@ -1,0 +1,54 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# live.analytics
+
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+live.analytics provides live-updating text analysis on your passages for
+ESL teaching. There are a bunch of different open-source wordlists out
+there, but making use of the research is not always all that easy. This
+project aims to consolidate the great work of a bunch of people and make
+it as accesible as possible to all audiences.
+
+  - Word-lists will be made available as part of an R-package, or as
+    downloadable csvs
+  - With some luck and inspiration, auto-generated text and
+    auto-generated questions will be an option in the future
+  - links to resources will be made available
+  - a demo will be made availabe
+  - shit be easy to use, yo
+
+## Installation
+
+This is never making it to CRAN, so you can only get it from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("antdurrant/general.text.analytics")
+```
+
+## Use of app
+
+Realistically, nobody beyond me will ever work on this - the usable app
+is be available at: anthonypdurrant.shinyapps.io/general.text.analytics
+and documentation is available at:
+netlify.someurlthathasnotbeenadefinedyet.com
+
+## NOTE
+
+  - All of the everything is a work-in-progress
+  - I am but a single person working on this in his spare-time, whilst
+    working full-time and raising a family
+      - I think it is interesting and have found coworkers get value out
+        of similar-ish in-house projects
+      - I have got enough out of the open-source community that I want
+        to give back where I have some level of knowledge, and this is
+        it
+      - Shout if you think of some way to improve, or if you want to
+        help out in some wa
