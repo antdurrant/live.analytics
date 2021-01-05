@@ -1,6 +1,3 @@
-## code to prepare `prep_lists` dataset goes here
-
-
 library(tidyverse)
 library(readtext)
 library(readxl)
@@ -105,3 +102,16 @@ list_dolch <- tibble(word = read_lines("./data-raw/list_new_dolch/NDL_1.0_lemmat
   select(headword, word, on_list) 
 
 usethis::use_data(list_dolch, overwrite = TRUE)
+
+
+list_flemma <- tibble(path = list.files("./data-raw/list_flemma_50c", full.names = TRUE)) %>%
+  mutate(lemma = map(path, read_lines),
+         group = parse_number(str_extract(path, "\\d+\\).txt")),
+         on_list = "flemma") %>% 
+  unnest(lemma) %>%
+  select(-path) %>%
+  distinct(lemma)
+
+
+usethis::use_data(list_flemma, overwrite = TRUE)
+
