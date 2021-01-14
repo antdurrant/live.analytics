@@ -110,8 +110,15 @@ list_flemma <- tibble(path = list.files("./data-raw/list_flemma_50c", full.names
          on_list = "flemma") %>% 
   unnest(lemma) %>%
   select(-path) %>%
-  distinct(lemma)
+  distinct(lemma, .keep_all = TRUE)
 
 
 usethis::use_data(list_flemma, overwrite = TRUE)
 
+
+list_flemma %>% rename(flemma = lemma) %>% 
+  mutate(lemma = lemmatize_words(flemma)) %>% 
+  add_count(lemma) %>% 
+  arrange(-n, lemma) %>%
+  writexl::write_xlsx("flemma_list.xlsx")
+  
